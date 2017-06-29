@@ -1,0 +1,20 @@
+{
+  "name": "npm_thetweetbot",
+  "version": "1.0.0",
+  "description": "Twitter bot ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "twitter",
+    "bot"
+  ],
+  "author": "Oscar I. Ricaud",
+  "license": "ISC",
+  "dependencies": {
+    "get-twitter-followers": "^2.0.0",
+    "twit": "^2.2.9"
+  }
+}
