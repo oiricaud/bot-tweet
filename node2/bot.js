@@ -4,7 +4,7 @@ var Twit = require('twit');
 
 var config = require('./config');
 var quotes = ['Going to set a bot that tweets quotes from Wilfred every 1 hour. ', 
-			  'Trust thyself only, and another shall not betray thee. - Thomas Fuller', 
+			  'Trust thyself only, and another shall not betray thee. - Tomas Fuller', 
 			  'Happiness can exist only in acceptance. - George Orwell', 
 			  'Fear has its uses but cowardice has none. - Mahatma Ghandi',
 			  'Happiness can exist only in acceptance. - George Orwell',
@@ -20,17 +20,21 @@ var quotes = ['Going to set a bot that tweets quotes from Wilfred every 1 hour. 
 console.log(config);
 var T = new Twit(config);
 var counter = 0;	
+getListOfUserNames();
+//tweetIt(counter);
 
-tweetIt(counter);
-
-setInterval(tweetIt, 1000*60*60);
+//setInterval(tweetIt, 1000*60*60);
 counter++;
-
+function getListOfUserNames(){
+	T.get('followers/ids', { screen_name: 'null' },  function (err, data, response) {
+  console.log(data)
+})
+}
 function tweetIt(){
 
 	var tweet={
 
-		status: quotes[counter] + '#terminaltweet #Wilfred'
+		status: quotes[counter] + ' #terminaltweet #Wilfred'
 
 	}
 
